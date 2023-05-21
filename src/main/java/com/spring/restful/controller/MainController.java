@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.restful.model.Student;
@@ -61,10 +62,21 @@ public class MainController {
 		
 		
 		
-		return students.get(id - 1);
-		
+		return students.get(id - 1);	
 		
 	}
+	
+	
+	
+	//localhost8080/restful/main/getStudentid
+		@GetMapping("/getStudentid")
+		public Student getStudentId(@RequestParam int id) {
+		
+			return students.get(id - 1);	
+			
+		}
+	
+	
 	
 	@PreDestroy
 	public void end() {
