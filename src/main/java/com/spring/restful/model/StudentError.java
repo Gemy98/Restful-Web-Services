@@ -2,20 +2,20 @@ package com.spring.restful.model;
 
 public class StudentError {
 
-	private String statusCode;
+	private int statusCode;
 	
 	private String message ; 
 	
-	private String timeStamp ;
+	private long timeStamp ;
 
 	public StudentError() {
 	}
 
-	public String getStatusCode() {
+	public int getStatusCode() {
 		return statusCode;
 	}
 
-	public void setStatusCode(String statusCode) {
+	public void setStatusCode(int statusCode) {
 		this.statusCode = statusCode;
 	}
 
@@ -27,11 +27,11 @@ public class StudentError {
 		this.message = message;
 	}
 
-	public String getTimeStamp() {
+	public long getTimeStamp() {
 		return timeStamp;
 	}
 
-	public void setTimeStamp(String timeStamp) {
+	public void setTimeStamp(long timeStamp) {
 		this.timeStamp = timeStamp;
 	} 
 }

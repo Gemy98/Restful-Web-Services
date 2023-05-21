@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.restful.exception.StudentException;
 import com.spring.restful.model.Student;
+import com.spring.restful.model.StudentError;
 
 
 //localhost 9090 /restful
@@ -91,6 +93,12 @@ public class MainController {
 		
 		public ResponseEntity<StudentError> getException(StudentException se){
 			
+			StudentError studentError = new StudentError();
+			studentError.setStatusCode(HttpStatus.NOT_FOUND.value());
+			studentError.setMessage(se.getMessage());
+			studentError.setTimeStamp(System.currentTimeMillis());
+			
+			return new ResponseEntity<StudentError>(studentError,HttpStatus.NOT_FOUND);
 		}
 	
 	
