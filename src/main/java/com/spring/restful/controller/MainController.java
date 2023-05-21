@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.spring.restful.exception.StudentException;
 import com.spring.restful.model.Student;
 
 
@@ -60,7 +61,10 @@ public class MainController {
 	@GetMapping("/getStudent/{id}")
 	public Student getStudentById(@PathVariable("id") int id) {
 		
-		
+		if (id > students.size() || id < 0) {
+			
+			throw new StudentException("Student Not Found");
+		}
 		
 		return students.get(id - 1);	
 		
@@ -72,10 +76,19 @@ public class MainController {
 		@GetMapping("/getStudentid")
 		public Student getStudentId(@RequestParam int id) {
 		
+
+			if (id > students.size() || id < 0) {
+				
+				throw new StudentException("Student Not Found");
+			}
+			
+			
 			return students.get(id - 1);	
 			
 		}
 	
+		
+		public 
 	
 	
 	@PreDestroy
