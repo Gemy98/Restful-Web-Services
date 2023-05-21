@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -88,7 +89,9 @@ public class MainController {
 		}
 	
 		
-		public 
+		public ResponseEntity<StudentError> getException(StudentException se){
+			
+		}
 	
 	
 	@PreDestroy
