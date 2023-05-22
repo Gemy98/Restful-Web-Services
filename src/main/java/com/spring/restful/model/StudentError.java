@@ -3,10 +3,10 @@ package com.spring.restful.model;
 public class StudentError {
 
 	private int statusCode;
-	
-	private String message ; 
-	
-	private long timeStamp ;
+
+	private String message;
+
+	private long timeStamp;
 
 	public StudentError() {
 	}
@@ -33,5 +33,5 @@ public class StudentError {
 
 	public void setTimeStamp(long timeStamp) {
 		this.timeStamp = timeStamp;
-	} 
+	}
 }
